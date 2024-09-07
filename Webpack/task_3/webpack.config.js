@@ -21,7 +21,7 @@ module.exports = {
 		contentBase: './public',
 		port: 8564,
 	},
-	mode: 'production',
+	mode: 'development',
 	module: {
 		rules: [
 			{
