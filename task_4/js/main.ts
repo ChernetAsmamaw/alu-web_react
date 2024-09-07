@@ -1,4 +1,3 @@
-import './subjects';
 export const ccp = new Subjects.Cpp();
 export const react = new Subjects.React();
 export const java = new Subjects.Java();
