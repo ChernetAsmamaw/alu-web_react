@@ -39,5 +39,7 @@
   "devDependencies": {
     "@testing-library/react": "^16.0.1",
     "util": "^0.12.5"
-  }
+  },
+  "predeploy" : "npm run build",
+  "deploy" : "gh-pages -d build",
 }
