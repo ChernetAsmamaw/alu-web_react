@@ -1,0 +1,16 @@
+.App-header {
+  min-width: 5vh;
+  display: flex;
+}
+
+.App-header .hbnb-logo {
+  height: 25vh;
+  margin-right: 10vh;
+}
+
+.App-header h1 {
+  font-size: 5vh;
+  align-self: center;
+  color: #e0354b;
+  font-weight: bold;
+}
