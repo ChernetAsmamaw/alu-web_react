@@ -15,6 +15,7 @@ class Notifications extends React.Component {
     console.log(`Notification ${id} has been marked as read`)
   }
 
+  // Only updates itself when the new property listNotifications has a longer list of elements than the previously
   shouldComponentUpdate(nextProps) {
     return (
       nextProps.listNotifications.length > this.props.listNotifications.length
