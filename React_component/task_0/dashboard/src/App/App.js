@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -6,8 +6,7 @@ import Footer from '../Footer/Footer';
 import Notifications from '../Notifications/Notifications';
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
-
-
+import { getLatestNotification } from '../utils/utils';
 
 
 const listCourses =[
@@ -22,7 +21,7 @@ const listNotifications = [
   {id: 3, type: 'urgent', html: { __html: getLatestNotification() }}
 ]
 
-class App extends Component {
+class App extends React.Component {
   render () {
     return (
       <>
@@ -38,7 +37,6 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
 
