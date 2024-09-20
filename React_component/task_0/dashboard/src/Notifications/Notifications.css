@@ -1,0 +1,23 @@
+div {
+    border: 1px dashed #e0354b;
+    padding: 2vh;
+    margin: 2vh;
+    float: right;
+}
+
+li[data-priority="default"] {
+    color: blue;
+}
+
+li[data-priority="urgent"] {
+    color: red;
+}
+
+.menuItem {
+    text-align: right;
+    margin-right: 30px;
+}
+
+.Notification button img {
+    width: 2vh;
+}
