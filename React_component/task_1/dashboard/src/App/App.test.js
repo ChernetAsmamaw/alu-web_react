@@ -22,15 +22,8 @@ describe("<App />", () => {
 	});
 
 	it('Verify if the user can log out using ctrl + h', () => {
-		const map = {};
-		window.addEventListener = jest.fn().mockImplementation((event, cb) => {
-			map[event] = cb;
-		});
-		const wrapper = shallow(<App />);
-		expect(wrapper.find(Login)).toHaveLength(1);
-		map.keydown({ key: 'h', ctrlKey: true });
-		wrapper.update();
-		expect(wrapper.find(Login)).toHaveLength(0);
-		expect(wrapper.find(CourseList)).toHaveLength(1);
+		const wrapper = shallow(<App isLoggedIn={true} />);
+		wrapper.instance().handleKeyDown({ key: 'h', ctrlKey: true });
+		expect(wrapper.state().isLoggedIn).toEqual(false);
 	});
 });
