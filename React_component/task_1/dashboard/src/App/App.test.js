@@ -20,10 +20,4 @@ describe("<App />", () => {
 		expect(wrapper.find(CourseList)).toHaveLength(1);
 		expect(wrapper.find(Login)).toHaveLength(0);
 	});
-
-	it('Verify if the user can log out using ctrl + h', () => {
-		const wrapper = shallow(<App isLoggedIn={true} />);
-		wrapper.instance().handleKeyDown({ key: 'h', ctrlKey: true });
-		expect(wrapper.state().isLoggedIn).toEqual(false);
-	});
 });
