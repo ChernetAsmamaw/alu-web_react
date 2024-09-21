@@ -21,17 +21,16 @@ describe("<App />", () => {
 		expect(wrapper.find(Login)).toHaveLength(0);
 	});
 
-	it('logOut function is called and alert is shown when control and h keys are pressed', () => {
-		const logOut = jest.fn();
-		const wrapper = shallow(<App logOut={logOut} />);
-		const alert = jest.spyOn(global, 'alert').mockImplementation(() => {});
-
-		const event = new KeyboardEvent('keydown', { key: 'h', ctrlKey: true });
-		document.dispatchEvent(event);
-
-		expect(logOut).toHaveBeenCalled();
-		expect(alert).toHaveBeenCalledWith('Logging you out');
-
-		jest.restoreAllMocks();
+	it('Verify if the user can log out using ctrl + h', () => {
+		const map = {};
+		window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+			map[event] = cb;
+		});
+		const wrapper = shallow(<App />);
+		expect(wrapper.find(Login)).toHaveLength(1);
+		map.keydown({ key: 'h', ctrlKey: true });
+		wrapper.update();
+		expect(wrapper.find(Login)).toHaveLength(0);
+		expect(wrapper.find(CourseList)).toHaveLength(1);
 	});
 });
